@@ -1,2 +1,2 @@
-# Javascript的内存管理
+#Javascript的内存管理
 

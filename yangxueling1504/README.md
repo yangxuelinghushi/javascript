@@ -20,18 +20,15 @@ JavaScript的内存基元在变量（对象，字符串等等）创建时分配�
 *引用计数策略遭遇的一个严重问题是**循环引用***
 
 比如：
-   function memoryProblem ()  {
-   
-         var o1 = new Object();
-         
-         var o2 = new Object();
-         
+```javascript
+<function memoryProblem ()  {
+      var o1 = new Object();
+      var o2 = new Object();
          o1.prop = o2;
-         
          o2.prop = o1;
-         
      }
-     
+  />
+  ```
 上面的代码中，当函数memoryProblem执行完毕后，o1和o2的引用次数不为0，最后得不到垃圾收集器的内存回收。  
-### 2.2。 内存泄漏 
+### 循环引用导致内存泄漏 
 
